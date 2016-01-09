@@ -1,0 +1,1 @@
+(function(){var a=function(){var b=document.createElement("iframe");b.src=(gUrlPrefix||"/")+"?q=login.load_cache";b.width=0;b.height=0;b.style.display="none";document.body.appendChild(b)};if(document.all){window.attachEvent("onload",a)}else{window.addEventListener("load",a,false)}})();

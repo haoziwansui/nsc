@@ -1,0 +1,103 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0017)http://10.0.0.55/ -->
+<HTML><HEAD><META content="IE=7.0000" http-equiv="X-UA-Compatible">
+<TITLE>校园网认证系统</TITLE>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type><LINK 
+rel=stylesheet href="./4/style.css"><LINK rel=stylesheet 
+href="./4/main.css"><!--[if lte IE 6]>
+  <script src="include/portal12/js_bj.js" type="text/javascript"></script>
+  <script type="text/javascript">DD_belatedPNG.fix('div, ul, img, li, input , a, h1, span');</script>
+  <![endif]-->
+<SCRIPT type=text/javascript src="./4/md5.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="./4/message.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="./4/login.js"></SCRIPT>
+
+<META name=GENERATOR content="MSHTML 11.00.9600.17631"></HEAD>
+<body class="bottom">
+  <div class="contain clearfix">
+    <div class="logo"><p style="font-size:20px; font-weight:bold; color:red; text-align:right; line-height:80px; padding-right:100px;">上网不涉密 涉密不上网</p></div>
+    <div class=" float_l width_l">
+      <div class="clearfix">
+        <br/>
+        <h3>通知公告</h3>
+        <div id="message" class="border bg_color"></div>
+      </div>
+      <div class="downs bg_rgba">
+        <h3>客户端下载</h3>
+        <ul class="clearfix">
+          <li>
+            <a href="files/SRun3K.exe"> <i class="icon_w"></i>
+              Windows
+            </a>
+          </li>
+          <li>
+            <a href="files/auth.apk"> <i class="icon_a"></i>
+              Android
+            </a>
+          </li>
+          <li>
+            <a href="files/srun3_client_macos_x86.zip">
+              <i class="icon_apple"></i>
+              Mac OS
+            </a>
+          </li>
+          <li>
+            <a href="download_client.html" target="_blank">
+              <i class="icon_phone"></i>
+              其他
+            </a>
+          </li>
+          <!--<li>
+          <a href="#">
+            <i class="icon_mac"></i>
+            重新绑定MAC
+          </a>
+        </li>
+        -->
+      </ul>
+    </div>
+  </div>
+  <div class=" float_r width_r">
+    <h2>网络认证系统</h2>
+    <ul class="login">
+      <form name="form1" onSubmit="do_login();return false;" method="post" action="./register.php">
+        <input name="drop" type="hidden" value="0">
+        <input type="hidden" name="uid" value="">
+        <li>
+          <p class="margbt">用户名</p>
+          <div class="input">
+            <input type="text" name="uname" id="loginname" maxlength="64" tabindex="1" placeholder="校园网帐号"></div>
+        </li>
+        <li>
+          <p class="margbt">密码</p>
+          <div class="input">
+            <input type="password" name="pass" maxlength="64" tabindex="2" id="password" placeholder="密码..."></div>
+        </li>
+        <li>
+          <input name="save_me" title="Remember me" type="checkbox" value="" />
+          记住密码
+        </li>
+        <li class="margin">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr valign="middle">
+              <td width="90" height="40" align="left">
+                <input class="a a_demo_one" type="button" id="button" onClick="do_login()" value="登录" />
+              </td>
+              <td width="100" align="center">
+                <input class="a a_demo_two" type="button" onClick="force_logout()" value="注销" />
+              </td>
+              <td width="90" align="right">
+                <a target="_blank" class="a a_demo_three" id="goto_services">自服务</a>
+              </td>
+            </tr>
+          </table>
+
+        </li>
+      </form>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

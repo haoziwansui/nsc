@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0037)http://bit.edu.cn/?q=login.load_cache -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript">
+try {
+var loadResource = function(url, success, fail, complete) 
+{
+    var ajax;
+    if (window.ActiveXObject) {
+        try {
+            ajax = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            try {
+                ajax = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (e) {
+                if (typeof(fail) == 'function') {
+                    fail(e);
+                }
+            }
+        }
+    } else {
+        try {
+            ajax = new XMLHttpRequest();
+        } catch (e) {
+            fail(e);
+        }
+    }
+
+    var stateChange = function()
+    {
+        if(ajax.readyState == 4)
+        {
+            if (ajax.status >=400) {
+                if (typeof(fail) === 'function') {
+                    fail(options.statusText, options.status, ajax);
+                } 
+            } else if (typeof(success) === 'function') {
+                success(ajax.responseText);
+            }
+
+            if (typeof(complete) === 'function') {
+                complete(ajax);
+            }
+        }
+    };
+    
+    ajax.onreadystatechange = stateChange;
+    ajax.open('get', url, true);
+
+    try {
+        ajax.send(null);
+    } catch (e) {
+        if (typeof(fail) == 'function') {
+            fail(e);
+        }
+    }
+};
+
+var gModuleSet = {}, gAppList = {'applist':{}};
+var loadJs = function(options) {
+    oDoc = document;
+    var oHead = oDoc.getElementsByTagName('HEAD').item(0);
+    var oScript= oDoc.createElement("script");
+    if (typeof(options) === "string") {
+        oScript.type = "text/javascript";
+        oScript.src = options;
+    } else {
+        oScript.src = options.src;
+    }
+    
+    oHead.appendChild(oScript); 
+};
+
+var loadCss = function(options) {
+    oDoc = document;
+    var oHead = oDoc.getElementsByTagName('HEAD').item(0);
+    var oLink= oDoc.createElement("LINK");
+    for (var p in options) {
+        oLink.setAttribute(p, options[p]);
+    }
+
+    oHead.appendChild(oLink); 
+}
+
+var cssQueue = [{href:"/tpl/user/tpl1/css/skins/blue.css?v=8.12.0", id:"style",rel:"stylesheet",type:"text/css"}, {href:"/tpl/public/jquery/em_jquery.css?v=8.12.0", rel:"stylesheet",type:"text/css"}, {href:"/tpl/user/public/jquery/em_jquery_user.css?v=8.12.0", rel:"stylesheet",type:"text/css"}];
+
+var jsQueue = ["/tpl/user/tpl1/js/lang.zh_cn.js?v=8.12.0", "/tpl/public/jquery/em_jquery.js?v=8.12.0", "/tpl/user/public/jquery/em_jquery_user.js?v=8.12.0", "/tpl/public/js/url_control.js?v=8.12.0", "/tpl/public/js/common.js?v=8.12.0", "/tpl/user/public/js/common.js?v=8.12.0", "/tpl/user/tpl1/js/ui_config.js?v=8.12.0", "/tpl/public/js/mail_rfc822.js?v=8.12.0", "/tpl/user/tpl1/js/cache_control.js?v=8.12.0", "/tpl/user/tpl1/js/folder_control.js?v=8.12.0", "/tpl/user/tpl1/js/plugin.js?v=8.12.0", "/tpl/user/tpl1/js/module_control.js?v=8.12.0", "/tpl/user/tpl1/js/contacts.js?v=8.12.0", "/tpl/user/tpl1/js/listmail.js?v=8.12.0", "/tpl/user/tpl1/js/listnotice.js?v=8.12.0", "/tpl/user/tpl1/js/readnotice.js?v=8.12.0", "/tpl/user/tpl1/js/settings.js?v=8.12.0", "/tpl/user/tpl1/js/compose.js?v=8.12.0", "/tpl/user/tpl1/js/upload.js?v=8.12.0", "/tpl/user/tpl1/js/logview.js?v=8.12.0", "/tpl/public/js/swfupload.js?v=8.12.0","/tpl/user/tpl1/js/upload_manager.js?v=8.12.0", "/tpl/user/tpl1/js/login.js?v=8.12.0", "/tpl/user/tpl1/js/history_control.js?v=8.12.0", "/tpl/public/ckeditor/ckeditor.js?v=8.12.0", "/tpl/public/js/notify.js?v=8.12.0", "/tpl/public/js/emmedia.js?v=8.12.0", "/tpl/public/js/swfobject.js?v=8.12.0", "/tpl/user/tpl1/js/today.js?v=8.12.0"];
+var jsTextQueue = [{content:"CKEDITOR.config.customConfig = '/tpl/public/ckeditor/config_em.js?v=8.12.0';", type:"text/javascript"}];
+jsQueue = jsQueue.concat(jsTextQueue);
+
+window.onload = function() {
+    for (var i=0; i<cssQueue.length; i++) {
+        loadCss(cssQueue[i]);
+    }
+    for (var i=0; i<jsQueue.length; i++) {
+        if (jsQueue[i].content) {
+            continue;
+        }
+        //loadJs(jsQueue[i]);
+        loadResource(jsQueue[i]);
+    }
+}
+} catch(e) {}
+</script>
+<link href="blue.css" id="style" rel="stylesheet" type="text/css"><link href="em_jquery.css" rel="stylesheet" type="text/css"><link href="em_jquery_user.css" rel="stylesheet" type="text/css"></head>
+<body>
+
+</body></html>
